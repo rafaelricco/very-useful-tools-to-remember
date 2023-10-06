@@ -1,7 +1,7 @@
 package com.geotelles.veryusefultoolstoremember
 
 data class Tool(
-    val id: Int? = null,
+    var id: Int,
     val title: String,
     val link: String,
     val description: String,

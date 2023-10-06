@@ -23,7 +23,7 @@ class ToolsController(
         return toolsService.getAll()
     }
 
-    @GetMapping
+    @GetMapping(params = ["tag"])
     fun getByTag(@RequestParam tag: String) : ResponseEntity<List<Tool>> {
         return ResponseEntity.ok().body(toolsService.getByTag(tag))
     }

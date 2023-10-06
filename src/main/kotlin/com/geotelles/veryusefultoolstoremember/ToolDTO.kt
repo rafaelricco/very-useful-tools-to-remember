@@ -8,6 +8,7 @@ data class ToolDTO(
 ) {
     fun toDomain() : Tool {
         return Tool(
+            id = 1,
             title = this.title,
             link = this.link,
             description = this.description,

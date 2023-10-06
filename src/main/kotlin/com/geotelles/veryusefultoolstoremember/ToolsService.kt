@@ -1,5 +1,8 @@
 package com.geotelles.veryusefultoolstoremember
 
+import org.springframework.stereotype.Service
+
+@Service
 class ToolsService(
     private val toolsRepository: ToolsRepository
 ) {
