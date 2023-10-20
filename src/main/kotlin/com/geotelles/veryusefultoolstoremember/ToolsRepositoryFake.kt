@@ -56,7 +56,7 @@ class ToolsRepositoryFake : ToolsRepository {
     }
 
     override fun getByTag(tag: String): List<Tool> {
-        TODO("Not yet implemented")
+        return listTools.filter { it.tags.contains(tag) }
     }
 
     override fun create(tool: Tool): Tool {
@@ -67,6 +67,6 @@ class ToolsRepositoryFake : ToolsRepository {
     }
 
     override fun delete(id: Int) {
-        TODO("Not yet implemented")
+        listTools.removeIf { it.id == id }
     }
 }

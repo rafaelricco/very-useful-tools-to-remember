@@ -40,9 +40,4 @@ class ToolsController(
     fun delete (@PathVariable id: Int) {
         toolsService.delete(id)
     }
-
-
-
-
-
 }
