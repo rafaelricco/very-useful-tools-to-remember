@@ -11,14 +11,14 @@ class ToolsService(
     }
 
     fun getByTag(tag: String) : List<Tool> {
-        return toolsRepository.getByTag(tag)
+        return toolsRepository.getByTag("%$tag%")
     }
 
     fun create(tool: Tool) : Tool {
-        return toolsRepository.create(tool)
+        return toolsRepository.save(tool)
     }
 
     fun delete(id: Int) {
-        toolsRepository.delete(id)
+        toolsRepository.deleteById(id)
     }
 }
