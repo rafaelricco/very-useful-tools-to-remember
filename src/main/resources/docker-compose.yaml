@@ -3,17 +3,17 @@ version: "3.9"
 services:
   postgres:
     image: postgres:14-alpine
-    container_name: postgres
+    container_name: postgres-tools
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: ifood-maps-app
+      POSTGRES_DB: tools
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U root -d postgres" ]
+      test: [ "CMD-SHELL", "pg_isready -U root -d tools" ]
       interval: 10s
       timeout: 5s
       retries: 5
     ports:
       - "5432:5432"
     volumes:
-      - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+      - ./create_database.sql:/docker-entrypoint-initdb.d/create_database.sql
